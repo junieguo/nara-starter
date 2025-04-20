@@ -10,10 +10,35 @@ chrome.runtime.onStartup.addListener(() => {
 // Handle alarms for resetting state
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === "dailyReset") {
-    chrome.storage.local.set({ state: null }, () => {
-      console.log("State reset at 12:00 a.m.");
+    // Retrieve the current state and history from storage
+    chrome.storage.local.get(["state", "history"], (result) => {
+      const { state, history } = result;
+
+      // Initialize history if it doesn't exist
+      const updatedHistory = history || {};
+
+      // Get today's date in YYYY-MM-DD format
+      const today = new Date().toISOString().split("T")[0];
+
+      // Extract completed tasks from the state
+      const completedTasks = state?.tasks?.filter(task => task.completed) || [];
+
+      // Add completed tasks to today's history
+      updatedHistory[today] = completedTasks;
+
+      // Save the updated history back to storage
+      chrome.storage.local.set({ history: updatedHistory }, () => {
+        console.log("History updated with completed tasks for", today);
+      });
+
+      // Reset the state
+      chrome.storage.local.set({ state: null }, () => {
+        console.log("State reset at 12:00 a.m.");
+      });
+
+      // Reset the alarm for the next day
+      setMidnightAlarm();
     });
-    setMidnightAlarm(); // Reset the alarm for the next day
   }
 });
 
