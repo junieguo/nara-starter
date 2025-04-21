@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "name": "Nara",
-  "description": "Chrome extension to manage tasks and subtasks with GPT.",
-  "version": "1.0",
-  "permissions": ["storage", "alarms"],
+  "description": "Chrome extension to help users start their day with simple and joyful tasks.",
+  "version": "1.1",
+  "permissions": ["storage", "alarms", "tabs"],
   "background": {
     "service_worker": "background.js"
   },

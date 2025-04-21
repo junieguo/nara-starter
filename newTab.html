@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task Tracker</title>
+    <title>Nara</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,6 +14,7 @@
   </head>
   <body>
     <h1 id="welcome-message">Who do you want to care for today?</h1>
+    <div id="inspirational-quote"></div>
 
     <!-- 
   <div id="deer1-circle" class="deer-circle"></div>
@@ -46,6 +47,20 @@
       <ul id="task-list"></ul>
     </div>
 
+    <!-- History Button -->
+    <button id="history-button">
+      <img src="assets/History-PNG-Image.png" alt="History" style="width: 40px; height: 40px;" />
+    </button>
+
+    <!-- Mood Selector-->
+    <div id="mood-selector">
+      <p>How are you feeling today?</p>
+      <div id="mood-options">
+        <button data-mood="happy">😊</button>
+        <button data-mood="neutral">😐</button>
+        <button data-mood="stressed">😣</button>
+      </div>
+    </div>
     
 
     <!-- Reset Button -->
@@ -67,6 +82,7 @@
       </div>
     </div>
 
+    
     <script src="scripts/Sortable.min.js"></script>
     <script src="newTab.js"></script>
   </body>

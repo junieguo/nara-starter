@@ -29,6 +29,9 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    object-fit: cover;
+    max-width: 100vw;
+    max-height: 100vh;
     opacity: 1;
     will-change: opacity;
     transition: opacity 0.5s ease-in-out;
@@ -90,6 +93,70 @@ body {
     gap: 12px;
     max-width: 400px;
 }
+
+#history-container {
+    padding: 2rem;
+    font-family: 'DM Sans', sans-serif;
+    color: #2c3e50;
+  }
+  
+  .history-entry {
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .history-entry h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: #4158D0;
+  }
+  
+  .history-task-list {
+    list-style-type: disc;
+    margin: 0.5rem 0 0 1.5rem;
+    padding: 0;
+  }
+  
+  .history-task-list li {
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+  }
+  
+  #mood-selector {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'DM Sans', sans-serif;
+    z-index: 999;
+  }
+  
+  #mood-selector p {
+    margin: 0 0 8px 0;
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  #mood-options button {
+    font-size: 24px;
+    margin-right: 8px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: transform 0.2s ease;
+  }
+  
+  #mood-options button:hover {
+    transform: scale(1.3);
+  }
+  
 
 .category-button {
     background: rgba(255, 255, 255, 0.9);
@@ -173,7 +240,6 @@ body {
     border: none;
     background: transparent;
     font-size: 16px;
-    text-transform: lowercase;
     color: #333;
     padding: 4px;
     font-family: 'DM Sans', sans-serif;
@@ -428,37 +494,10 @@ input[type="checkbox"]:checked+.task-text {
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s ease;
+    width: 25vw;
+    height: 25vw;
 }
 
-#deer1-circle {
-    width: 450px;
-    height: 450px;
-}
-
-#deer2-circle {
-    width: 400px;
-    height: 400px;
-}
-
-#deer3-circle {
-    width: 220px;
-    height: 220px;
-}
-
-#deer4-circle {
-    width: 250px;
-    height: 250px;
-}
-
-#deer5-circle {
-    width: 340px;
-    height: 340px;
-}
-
-#deer6-circle {
-    width: 500px;
-    height: 500px;
-}
 
 .deer-circle.active {
     opacity: 1;
@@ -488,3 +527,54 @@ input[type="checkbox"]:checked+.task-text {
     opacity: 0.95;
     animation: welcomeFadeIn 1s ease-out forwards;
     }
+
+#inspirational-quote {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-style: italic;
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 80%;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 500;
+    animation: welcomeFadeIn 1s ease-out forwards;
+}
+
+.encouragement-bubble {
+    position: fixed;
+    max-width: 220px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    animation: bubbleFade 3s ease forwards;
+    pointer-events: none;
+  }
+  
+  @keyframes bubbleFade {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    90% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
