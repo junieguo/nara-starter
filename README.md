@@ -60,5 +60,9 @@ git pull
 - Submit the final version of your project as per course guidelines.
 - Include a brief write-up of your implemented features and any challenges faced.
 
----
-Happy coding, and good luck with Nara! 🦌
+## Write-Up
+We implemented 4 new features for this extension:
+1. **Speech Bubble Encouragement**: Everytime a task is completed, a speech bubble appears near the dear with an encouraging message. 
+2. **Mood Selection Prompt**: Once a day, the extension will prompt the user to input their mood (choosing from a happy, fine, or sad emoji). That data is then stored in the history page next to each date.
+3. **Inspirational Quote Overlay**: Everytime a new tab is opened at the bottom of the screen a new inspirational quote is overlayed.
+4. **Implement a History Feature**: All tasks completed by the user will be saved in a history page accessible through a button on the newTab page (a paper icon in the top left corner). Each element includes the date the data was stored and all the tasks finished that day. 
